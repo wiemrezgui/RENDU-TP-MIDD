@@ -175,25 +175,25 @@ public class ClientBingoGUI extends JFrame {
         actionPanel.setBackground(COLOR_BACKGROUND);
 
         JButton validerBtn = new JButton("VALIDER LA PRÉDICTION");
-        validerBtn.setFont(new Font("Arial", Font.BOLD, 16));
+        validerBtn.setFont(new Font("Arial", Font.BOLD, 13));
         validerBtn.setBackground(COLOR_SUCCESS);
-        validerBtn.setForeground(Color.WHITE);
+        validerBtn.setForeground(new Color(41, 128, 185));
         validerBtn.setFocusPainted(false);
         validerBtn.setPreferredSize(new Dimension(250, 50));
         validerBtn.addActionListener(e -> validerPrediction());
 
         JButton resetBtn = new JButton("RÉINITIALISER");
-        resetBtn.setFont(new Font("Arial", Font.BOLD, 16));
+        resetBtn.setFont(new Font("Arial", Font.BOLD, 13));
         resetBtn.setBackground(COLOR_WARNING);
-        resetBtn.setForeground(Color.WHITE);
+        resetBtn.setForeground(new Color(41, 128, 185));
         resetBtn.setFocusPainted(false);
         resetBtn.setPreferredSize(new Dimension(200, 50));
         resetBtn.addActionListener(e -> reinitialiserSelection());
 
         JButton menuBtn = new JButton("◄ MENU");
-        menuBtn.setFont(new Font("Arial", Font.BOLD, 16));
+        menuBtn.setFont(new Font("Arial", Font.BOLD, 13));
         menuBtn.setBackground(COLOR_DANGER);
-        menuBtn.setForeground(Color.WHITE);
+        menuBtn.setForeground(new Color(41, 128, 185));
         menuBtn.setFocusPainted(false);
         menuBtn.setPreferredSize(new Dimension(150, 50));
         menuBtn.addActionListener(e -> retourMenu());
@@ -240,9 +240,9 @@ public class ClientBingoGUI extends JFrame {
 
     private JButton creerBoutonMenu(String texte, Color couleur) {
         JButton btn = new JButton(texte);
-        btn.setFont(new Font("Arial", Font.BOLD, 24));
+        btn.setFont(new Font("Arial", Font.PLAIN, 20));
         btn.setBackground(couleur);
-        btn.setForeground(Color.WHITE);
+        btn.setForeground(new Color(41, 128, 185));
         btn.setFocusPainted(false);
         btn.setPreferredSize(new Dimension(400, 70));
         btn.setBorder(BorderFactory.createEmptyBorder(10, 20, 10, 20));
@@ -286,7 +286,7 @@ public class ClientBingoGUI extends JFrame {
         boulesSelectionnees.clear();
         for (JButton btn : bouleButtons) {
             btn.setBackground(Color.WHITE);
-            btn.setForeground(COLOR_PRIMARY);
+            btn.setForeground(new Color(41, 128, 185));
         }
     }
 
@@ -474,10 +474,10 @@ public class ClientBingoGUI extends JFrame {
             socket = new Socket(HOST, PORT);
             in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
             out = new PrintWriter(socket.getOutputStream(), true);
-            statusLabel.setText("✓ Connecté au serveur");
+            statusLabel.setText("Connecté au serveur");
             statusLabel.setForeground(COLOR_SUCCESS);
         } catch (IOException e) {
-            statusLabel.setText("✗ Erreur de connexion");
+            statusLabel.setText("Erreur de connexion");
             statusLabel.setForeground(COLOR_DANGER);
             JOptionPane.showMessageDialog(this,
                     "Impossible de se connecter au serveur!\nAssurez-vous que le serveur et le Gateway sont démarrés.",
