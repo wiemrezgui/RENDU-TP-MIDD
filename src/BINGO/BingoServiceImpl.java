@@ -67,7 +67,10 @@ public class BingoServiceImpl extends UnicastRemoteObject implements IBingoServi
 
         return score;
     }
-
+    @Override
+    public synchronized int getMeilleurScore() throws RemoteException {
+        return meilleurScore;
+    }
 
     @Override
     public synchronized void enregistrerScore(int score) throws RemoteException {

@@ -38,7 +38,8 @@ public class ClientBingo {
         System.out.println("║          MENU PRINCIPAL BINGO          ║");
         System.out.println("╠════════════════════════════════════════╣");
         System.out.println("║  1. Jouer au BINGO                     ║");
-        System.out.println("║  2. Quitter                            ║");
+        System.out.println("║  2. Consulter le meilleur score        ║");
+        System.out.println("║  3. Quitter                            ║");
         System.out.println("╚════════════════════════════════════════╝");
         System.out.print("Votre choix: ");
     }
@@ -77,7 +78,7 @@ public class ClientBingo {
 
                     afficherResultat(prediction, boulesTirees, score, scoreTotal);
                 } else if (response.startsWith("ERREUR:")) {
-                    System.out.println("Erreur "+ response.substring(7));
+                    System.out.println("❌ " + response.substring(7));
                 }
 
             } catch (IOException e) {
@@ -171,6 +172,24 @@ public class ClientBingo {
         System.out.println("╚════════════════════════════════════════╝");
     }
 
+    public void consulterMeilleurScore() {
+        out.println("MEILLEUR_SCORE:");
+
+        try {
+            String response = in.readLine();
+            if (response.startsWith("SCORE:")) {
+                int score = Integer.parseInt(response.substring(6));
+                System.out.println("\n╔════════════════════════════════════════╗");
+                System.out.println("║         MEILLEUR SCORE                 ║");
+                System.out.println("╠════════════════════════════════════════╣");
+                System.out.println("║  🏆 Record: " + score + "/10                      ║");
+                System.out.println("╚════════════════════════════════════════╝");
+            }
+        } catch (IOException e) {
+            System.err.println("Erreur: " + e.getMessage());
+        }
+    }
+
     public void quitter() {
         try {
             out.println("QUITTER:");
@@ -217,11 +236,14 @@ public class ClientBingo {
                         jouerBingo();
                         break;
                     case 2:
+                        consulterMeilleurScore();
+                        break;
+                    case 3:
                         quitter();
                         continuer = false;
                         break;
                     default:
-                        System.out.println("  Choix invalide. Veuillez choisir 1 ou 2 .");
+                        System.out.println("  Choix invalide. Veuillez choisir 1, 2 ou 3.");
                 }
             } catch (InputMismatchException e) {
                 System.out.println("  Veuillez entrer un nombre valide!");

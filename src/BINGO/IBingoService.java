@@ -10,6 +10,11 @@ public interface IBingoService extends Remote {
     ResultatTirage verifierPrediction(int[] prediction) throws RemoteException;
 
     /**
+     * Récupère le meilleur score enregistré
+     */
+    int getMeilleurScore() throws RemoteException;
+
+    /**
      * Enregistre un nouveau score si c'est un record
      */
     void enregistrerScore(int score) throws RemoteException;
