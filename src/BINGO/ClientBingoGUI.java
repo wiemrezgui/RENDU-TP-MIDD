@@ -1,6 +1,5 @@
 package BINGO;
 
-// ClientBingoGUI.java
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -22,7 +21,7 @@ public class ClientBingoGUI extends JFrame {
     private JPanel menuPanel;
     private JPanel gamePanel;
     private JButton[] bouleButtons;
-    private Set<Integer> boulesSelectionnees;
+    private LinkedHashSet<Integer> boulesSelectionnees;
     private JLabel statusLabel;
     private JLabel scoreLabel;
     private JTextArea resultatArea;
@@ -47,7 +46,7 @@ public class ClientBingoGUI extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
 
-        boulesSelectionnees = new HashSet<>();
+        boulesSelectionnees = new LinkedHashSet<>();
         tentativeActuelle = 0;
         scoreTotal = 0;
 
@@ -299,12 +298,15 @@ public class ClientBingoGUI extends JFrame {
             return;
         }
 
-        // Convertir en tableau
+        // Convertir en tableau en préservant l'ordre
         predictionActuelle = new int[10];
         int index = 0;
         for (int num : boulesSelectionnees) {
             predictionActuelle[index++] = num;
         }
+
+        // Afficher pour debug (vous pouvez retirer après)
+        System.out.println("Prédiction envoyée: " + Arrays.toString(predictionActuelle));
 
         // Envoyer au serveur
         envoyerPrediction(predictionActuelle);
