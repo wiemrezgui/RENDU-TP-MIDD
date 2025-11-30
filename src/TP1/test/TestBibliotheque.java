@@ -1,4 +1,8 @@
-package TP1;
+package TP1.test;
+
+import TP1.iterators.Iterator;
+import TP1.models.Bibliotheque;
+import TP1.models.Livre;
 
 import java.util.*;
 

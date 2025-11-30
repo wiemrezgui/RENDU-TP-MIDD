@@ -1,4 +1,7 @@
-package TP1;
+package TP1.models;
+
+import TP1.iterators.BibliIterator;
+import TP1.iterators.Iterator;
 
 import java.util.ArrayList;
 import java.util.List;
