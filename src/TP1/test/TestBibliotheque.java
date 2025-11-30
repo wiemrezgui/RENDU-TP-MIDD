@@ -29,7 +29,7 @@ public class TestBibliotheque {
 
             // Vérifier si le livre existe déjà
             if (livreExisteDeja(bib, titre)) {
-                System.out.println("⚠ Ce livre existe déjà dans la bibliothèque !");
+                System.out.println("Ce livre existe déjà dans la bibliothèque !");
                     continue;
             }
 
@@ -40,7 +40,7 @@ public class TestBibliotheque {
             Livre livre = new Livre(titre, themes);
             bib.ajouterLivre(livre);
 
-            System.out.println("✓ Livre '" + titre + "' ajouté avec succès !");
+            System.out.println(" Livre '" + titre + "' ajouté avec succès !");
 
             // Demander si on continue
             System.out.print("\nVoulez-vous ajouter un autre livre ? (o/n) : ");
@@ -61,7 +61,7 @@ public class TestBibliotheque {
             }
 
             if (themeRecherche.isEmpty()) {
-                System.out.println("⚠ Veuillez entrer un thème valide");
+                System.out.println(" Veuillez entrer un thème valide");
                 continue;
             }
 
@@ -139,9 +139,9 @@ public class TestBibliotheque {
                 // Éviter les doublons
                 if (!themeDejaPresent(themes, theme)) {
                     themes.add(theme);
-                    System.out.println("✓ Thème ajouté : " + theme);
+                    System.out.println(" Thème ajouté : " + theme);
                 } else {
-                    System.out.println("⚠ Ce thème a déjà été ajouté");
+                    System.out.println(" Ce thème a déjà été ajouté");
                 }
             }
         }

@@ -1,4 +1,6 @@
-package TP2.EX1TCP;
+package TP2.EX1TCP.serveur;
+
+import TP2.EX1TCP.interfaces.MathOpsImpl;
 
 import java.io.*;
 import java.net.*;

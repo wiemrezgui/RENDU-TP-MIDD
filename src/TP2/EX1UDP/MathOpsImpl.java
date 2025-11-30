@@ -1,6 +1,6 @@
 package TP2.EX1UDP;
 
-import TP2.EX1TCP.MathOps;
+import TP2.EX1TCP.interfaces.MathOps;
 
 public class MathOpsImpl implements MathOps {
 

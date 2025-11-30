@@ -1,4 +1,4 @@
-package TP2.EX1TCP;
+package TP2.EX1TCP.client;
 
 import java.io.*;
 import java.net.*;

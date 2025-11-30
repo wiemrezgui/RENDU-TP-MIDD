@@ -1,4 +1,4 @@
-package TP2.EX1TCP;
+package TP2.EX1TCP.interfaces;
 
 public interface MathOps {
     long factorielle(int n);
