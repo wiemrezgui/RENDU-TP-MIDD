@@ -1,5 +1,7 @@
-package TP2.EX1UDP;
+package TP2.EX1UDP.serveur;
 
+
+import TP2.EX1UDP.interfaces.MathOpsImpl;
 
 import java.io.*;
 import java.net.*;

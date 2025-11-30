@@ -1,4 +1,4 @@
-package TP2.EX1UDP;
+package TP2.EX1UDP.interfaces;
 
 import TP2.EX1TCP.interfaces.MathOps;
 

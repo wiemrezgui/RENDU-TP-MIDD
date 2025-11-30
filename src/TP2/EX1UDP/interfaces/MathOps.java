@@ -1,4 +1,4 @@
-package TP2.EX1UDP;
+package TP2.EX1UDP.interfaces;
 
 public interface MathOps {
     long factorielle(int n);

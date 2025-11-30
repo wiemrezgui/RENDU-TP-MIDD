@@ -1,4 +1,4 @@
-package TP2.EX1UDP;
+package TP2.EX1UDP.client;
 
 import java.io.*;
 import java.net.*;
