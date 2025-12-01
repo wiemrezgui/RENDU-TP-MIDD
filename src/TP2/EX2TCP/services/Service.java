@@ -1,4 +1,4 @@
-package TP2.EX2TCP;
+package TP2.EX2TCP.services;
 
 public interface Service {
     double traiterBonus(double salaire);

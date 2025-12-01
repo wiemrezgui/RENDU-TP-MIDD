@@ -1,6 +1,6 @@
 package TP2.EX2UDP;
 
-import TP2.EX2TCP.Service;
+import TP2.EX2TCP.services.Service;
 
 public class ServiceImpl implements Service {
 

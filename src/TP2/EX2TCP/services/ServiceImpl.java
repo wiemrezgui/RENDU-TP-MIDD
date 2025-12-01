@@ -1,6 +1,6 @@
-package TP2.EX2TCP;
+package TP2.EX2TCP.services;
 
-public class ServiceImpl implements Service{
+public class ServiceImpl implements Service {
 
     @Override
     public double traiterBonus(double salaire) {

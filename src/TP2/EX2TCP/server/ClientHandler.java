@@ -1,4 +1,6 @@
-package TP2.EX2TCP;
+package TP2.EX2TCP.server;
+
+import TP2.EX2TCP.services.ServiceImpl;
 
 import java.io.*;
 import java.net.*;

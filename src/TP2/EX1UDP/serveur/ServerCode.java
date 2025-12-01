@@ -4,7 +4,9 @@ package TP2.EX1UDP.serveur;
 import TP2.EX1UDP.interfaces.MathOpsImpl;
 
 import java.io.*;
-import java.net.*;
+import java.net.DatagramPacket;
+import java.net.DatagramSocket;
+import java.net.InetAddress;
 
 public class ServerCode {
 
