@@ -1,4 +1,6 @@
-package TP2.EX2UDP;
+package TP2.EX2UDP.server;
+
+import TP2.EX2UDP.services.ServiceImpl;
 
 import java.io.*;
 import java.net.*;

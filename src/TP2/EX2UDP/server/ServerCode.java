@@ -1,4 +1,4 @@
-package TP2.EX2UDP;
+package TP2.EX2UDP.server;
 
 import java.net.*;
 import java.util.concurrent.*;

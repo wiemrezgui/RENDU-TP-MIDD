@@ -1,4 +1,4 @@
-package TP2.EX2UDP;
+package TP2.EX2UDP.services;
 
 import TP2.EX2TCP.services.Service;
 

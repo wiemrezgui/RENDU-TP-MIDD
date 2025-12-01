@@ -1,4 +1,4 @@
-package TP2.EX2UDP;
+package TP2.EX2UDP.services;
 
 public interface Service {
     double traiterBonus(double salaire);
