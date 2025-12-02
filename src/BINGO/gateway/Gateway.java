@@ -1,7 +1,6 @@
 package BINGO.gateway;
 
 import BINGO.gateway.handlers.ClientHandler;
-import BINGO.utils.ResultatTirage;
 import BINGO.services.IBingoService;
 
 import java.io.*;

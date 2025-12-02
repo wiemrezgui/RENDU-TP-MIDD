@@ -5,16 +5,10 @@ import BINGO.services.IBingoService;
 
 import java.io.*;
 import java.net.*;
-import java.rmi.registry.LocateRegistry;
-import java.rmi.registry.Registry;
 import java.util.HashSet;
 import java.util.Set;
 
-/**
- * Classe dédiée à la gestion d'un client individuel
- * Traite toutes les communications avec un client spécifique
- */
-public class ClientHandler implements Runnable {
+public class ClientHandler extends Thread {
     private Socket socket;
     private BufferedReader in;
     private PrintWriter out;

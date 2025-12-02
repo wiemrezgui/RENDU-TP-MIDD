@@ -305,7 +305,6 @@ public class ClientBingoGUI extends JFrame {
             predictionActuelle[index++] = num;
         }
 
-        // Afficher pour debug (vous pouvez retirer après)
         System.out.println("Prédiction envoyée: " + Arrays.toString(predictionActuelle));
 
         // Envoyer au serveur
@@ -395,7 +394,7 @@ public class ClientBingoGUI extends JFrame {
                             "╔═══════════════════════════════════╗\n" +
                             "║     PARTIE TERMINÉE!              ║\n" +
                             "╠═══════════════════════════════════╣\n" +
-                            "║  Score final: %d/10               ║\n" +
+                            "║  Score final: %d/100               ║\n" +
                             "║  Taux de réussite: %.1f%%         ║\n",
                     scoreTotal, (scoreTotal * 100.0) / 100.0
             );

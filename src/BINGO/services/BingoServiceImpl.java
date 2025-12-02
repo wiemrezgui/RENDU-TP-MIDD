@@ -37,9 +37,7 @@ public class BingoServiceImpl extends UnicastRemoteObject implements IBingoServi
         return new ResultatTirage(score, boulesTirees);
     }
 
-    /**
-     * Tire 10 boules aléatoirement sans remise (0-9)
-     */
+    // Tire 10 boules aléatoirement sans remise (0-9)
     private int[] tirerBoules() {
         List<Integer> urne = new ArrayList<>();
         for (int i = 0; i < 10; i++) {
@@ -55,9 +53,7 @@ public class BingoServiceImpl extends UnicastRemoteObject implements IBingoServi
         return boules;
     }
 
-    /**
-     * Calcule le score en comparant la prédiction et le tirage
-     */
+    // Calcule le score en comparant la prédiction et le tirage
     private int calculerScore(int[] prediction, int[] tirage) {
         int score = 0;
 
