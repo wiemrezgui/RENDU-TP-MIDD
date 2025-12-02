@@ -1,4 +1,4 @@
-package BINGO;
+package BINGO.clients;
 
 import javax.swing.*;
 import java.awt.*;
@@ -370,11 +370,11 @@ public class ClientBingoGUI extends JFrame {
         sb.append("Score : ").append(score).append("/10");
 
         if (score == 10) {
-            sb.append(" 🎉 PARFAIT!");
+            sb.append(" PARFAIT!");
         } else if (score >= 7) {
-            sb.append(" ✨ Excellent!");
+            sb.append(" Excellent!");
         } else if (score >= 5) {
-            sb.append(" 👍 Bien!");
+            sb.append("  Bien!");
         }
 
         sb.append("\nScore total : ").append(scoreTotal).append("/100\n");
@@ -401,13 +401,13 @@ public class ClientBingoGUI extends JFrame {
             );
 
             if (scoreTotal >= 80) {
-                message += "║  🏆 Performance exceptionnelle! 🏆║\n";
+                message += "║   Performance exceptionnelle! ║\n";
             } else if (scoreTotal >= 60) {
-                message += "║  ⭐ Très bonne performance! ⭐   ║\n";
+                message += "║   Très bonne performance!   ║\n";
             } else if (scoreTotal >= 40) {
-                message += "║  👏 Bonne performance!            ║\n";
+                message += "║   Bonne performance!            ║\n";
             } else {
-                message += "║  💪 Continue à t'entraîner!       ║\n";
+                message += "║   Continue à t'entraîner!       ║\n";
             }
 
             message += "╚═══════════════════════════════════╝";
@@ -446,7 +446,7 @@ public class ClientBingoGUI extends JFrame {
             if (response.startsWith("SCORE:")) {
                 int score = Integer.parseInt(response.substring(6));
                 JOptionPane.showMessageDialog(this,
-                        "🏆 Meilleur Score: " + score + "/10",
+                        "Meilleur Score: " + score + "/10",
                         "Record",
                         JOptionPane.INFORMATION_MESSAGE);
             }

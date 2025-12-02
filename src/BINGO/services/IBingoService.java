@@ -1,4 +1,6 @@
-package BINGO;
+package BINGO.services;
+
+import BINGO.utils.ResultatTirage;
 
 import java.rmi.Remote;
 import java.rmi.RemoteException;

@@ -1,4 +1,4 @@
-package BINGO;
+package BINGO.clients;
 
 // ClientBingo.java
 import java.io.*;

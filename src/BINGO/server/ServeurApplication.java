@@ -1,6 +1,8 @@
-package BINGO;
+package BINGO.server;
 
 // ServeurApplication.java
+import BINGO.services.BingoServiceImpl;
+
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 

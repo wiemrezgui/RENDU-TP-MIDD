@@ -1,4 +1,4 @@
-package BINGO;
+package BINGO.utils;
 
 import java.io.Serializable;
 import java.util.Arrays;
