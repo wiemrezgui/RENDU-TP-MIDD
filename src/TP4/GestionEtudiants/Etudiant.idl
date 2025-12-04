@@ -1,0 +1,74 @@
+// Description: Définition des interfaces CORBA pour la gestion des étudiants et promotions
+
+module GestionEtudiants {
+
+    // Structure représentant une épreuve (examen)
+    struct Epreuve {
+        string nom;           // Nom de l'épreuve (ex: "Ecrit de math")
+        double note;          // Note obtenue
+        double coefficient;   // Poids de l'épreuve dans la moyenne
+    };
+
+    // Structure représentant un livre emprunté
+    struct Livre {
+        long numero;          // Numéro unique du livre
+        string nom;           // Titre du livre
+        string auteur;        // Auteur du livre
+        string collection;    // Collection du livre
+        string datePublication; // Date de publication
+    };
+
+    // Séquence (tableau dynamique) d'épreuves
+    typedef sequence<Epreuve> ListeEpreuves;
+
+    // Séquence de noms d'épreuves (chaînes de caractères)
+    typedef sequence<string> ListeNomsEpreuves;
+
+    // Séquence de livres
+    typedef sequence<Livre> ListeLivres;
+
+    // Interface représentant un étudiant
+    interface Etudiant {
+
+        // Attributs en lecture seule (readonly)
+        readonly attribute string nom;
+        readonly attribute string prenom;
+        readonly attribute long numeroEtudiant;
+
+        // Méthode 1: Ajouter une épreuve à l'étudiant
+        // Paramètres: nom de l'épreuve, note obtenue, coefficient
+        void ajouter_une_epreuve(in string nomEpreuve, in double note, in double coefficient);
+
+        // Méthode 2: Récupérer la liste des noms des épreuves
+        // Retourne un tableau de chaînes contenant les noms des épreuves
+        ListeNomsEpreuves liste_des_epreuves();
+
+        // Méthode 3: Calculer la moyenne générale de l'étudiant
+        // Retourne la moyenne pondérée selon les coefficients
+        double calculer_la_moyenne();
+
+        // Méthode 4: Emprunter un livre
+        // Paramètres: toutes les informations du livre
+        void emprunter_un_livre(in long numero, in string nom, in string auteur,
+                                in string collection, in string datePublication);
+
+        // Méthode 5: Récupérer la liste des livres empruntés
+        ListeLivres obtenir_livres_empruntes();
+    };
+
+    // Interface représentant une promotion (classe d'étudiants)
+    interface Promotion {
+
+        // Ajouter un nouvel étudiant à la promotion
+        // Retourne une référence vers l'objet Etudiant créé
+        Etudiant ajouter_un_etudiant(in string nom, in string prenom, in long numeroEtudiant);
+
+        // Rechercher un étudiant par son numéro
+        // Retourne une référence vers l'étudiant ou null si non trouvé
+        Etudiant rechercher_un_etudiant(in long numeroEtudiant);
+
+        // Calculer la moyenne générale de toute la promotion
+        // Retourne la moyenne de tous les étudiants
+        double calculer_moyenne_de_la_promotion();
+    };
+};
